@@ -67,7 +67,7 @@ let initMsg = false;
 router.get('/initmsg', async (ctx, next) => {
   if (!initMsg) {
     initMsg = true;
-    const resp = await fetch('https://ahj-diplom-server.herokuapp.com');
+    const resp = await fetch('https://ahj-diplom-server.herokuapp.com/msg.json');
     const body = await resp.text();
     const arrInitMsg = JSON.parse(body);
     arrMessges.push(...arrInitMsg);
